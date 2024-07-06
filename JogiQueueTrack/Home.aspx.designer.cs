@@ -24,6 +24,15 @@ namespace JogiQueueTrack
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+        /// Image1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image Image1;
+
+        /// <summary>
         /// Expired control.
         /// </summary>
         /// <remarks>
@@ -31,24 +40,6 @@ namespace JogiQueueTrack
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl Expired;
-
-        /// <summary>
-        /// gvQueue control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvQueue;
-
-        /// <summary>
-        /// lblRemainToken control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblRemainToken;
 
         /// <summary>
         /// lblQueueNo control.
@@ -60,22 +51,13 @@ namespace JogiQueueTrack
         protected global::System.Web.UI.WebControls.Label lblQueueNo;
 
         /// <summary>
-        /// lblAppoTime control.
+        /// lblRemainToken control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAppoTime;
-
-        /// <summary>
-        /// lblAprroxTime control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAprroxTime;
+        protected global::System.Web.UI.WebControls.Label lblRemainToken;
 
         /// <summary>
         /// txtCurrentQueue control.

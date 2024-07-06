@@ -37,45 +37,51 @@ namespace JogiQueueTrack
 
                 string tmpdate = param_dates;
 
-                /* 01072024
-                 * 
-                 * 
-                 * if (DateTime.Now.ToString("yyyy-MM-dd") != Convert.ToDateTime(param_dates).ToString("yyyy-MM-dd"))
+                //01072024
+                
+               if (DateTime.Now.ToString("yyyy-MM-dd") != Convert.ToDateTime(param_dates).ToString("yyyy-MM-dd"))
                 {
                     Expired.Visible = true;
-                    lblPatientName.Visible = false;
                     lblQueueNo.Visible = false;
-                    lblAppoTime.Visible = false;
-                    lblAprroxTime.Visible = false;
-                    lblCurrentQueue.Visible = false;
-                    lblCurrentQueue1.Visible = false;
-
+                    lblRemainToken.Visible = false;
                     return;
                 }
-                 * 
-                 */
-
-                //Sone Mahesh
-                //////sql_query = "SELECT   dbo.tbl_Registration.QueueNo, tbl_LedgerMaster.LedgerName, "
-                //////          + " ISNULL(dbo.tbl_Registration.DoctorId, 0) AS DoctorId, ISNULL(dbo.tbl_UserMaster.UserName, '') AS UserName, '' as AproxTime, tbl_AppointmentMaster.ADtmFrom, tbl_AppointmentMaster.Remark, tbl_Registration.DDExitTime "
-                //////          + " FROM dbo.tbl_Registration INNER JOIN "
-                //////          + " dbo.tbl_LedgerMaster ON dbo.tbl_Registration.LedgerId = dbo.tbl_LedgerMaster.LedgerId  "
-                //////          + " LEFT OUTER JOIN dbo.tbl_UserMaster ON dbo.tbl_Registration.DoctorId = dbo.tbl_UserMaster.UserId "
-                //////          + " left join tbl_AppointmentMaster ON tbl_Registration.AId = tbl_AppointmentMaster.AId "
-                //////          + " where cast(tbl_AppointmentMaster.ADtmFrom As Date) = '" + Convert.ToDateTime(param_dates).ToString("yyyy-MM-dd") + "' and "
-                //////          + " tbl_LedgerMaster.ledgerId = " + Convert.ToInt32(ledgerId) + " "
-                //////          + " and tbl_AppointmentMaster.remark = 'DR. DEVANGI JOGAL' order by QueueNo ";
 
 
-                sql_query = " SELECT   dbo.tbl_AppointmentMaster .anumber as QueueNo, tbl_LedgerMaster.LedgerName, "
-                          + " ISNULL(dbo.tbl_Registration.DoctorId, 0) AS DoctorId, ISNULL(dbo.tbl_UserMaster.UserName, '') AS UserName, '' as AproxTime, tbl_AppointmentMaster.ADtmFrom, tbl_AppointmentMaster.Remark, tbl_Registration.DDExitTime, tbl_Registration.DDInTime, tbl_LedgerMaster.LedgerId "
-                          + " FROM dbo.tbl_AppointmentMaster INNER JOIN "
-                          + " dbo.tbl_LedgerMaster ON dbo.tbl_AppointmentMaster.LedgerId = dbo.tbl_LedgerMaster.LedgerId  "
+               //Sone Mahesh
+               //////sql_query = "SELECT   dbo.tbl_Registration.QueueNo, tbl_LedgerMaster.LedgerName, "
+               //////          + " ISNULL(dbo.tbl_Registration.DoctorId, 0) AS DoctorId, ISNULL(dbo.tbl_UserMaster.UserName, '') AS UserName, '' as AproxTime, tbl_AppointmentMaster.ADtmFrom, tbl_AppointmentMaster.Remark, tbl_Registration.DDExitTime "
+               //////          + " FROM dbo.tbl_Registration INNER JOIN "
+               //////          + " dbo.tbl_LedgerMaster ON dbo.tbl_Registration.LedgerId = dbo.tbl_LedgerMaster.LedgerId  "
+               //////          + " LEFT OUTER JOIN dbo.tbl_UserMaster ON dbo.tbl_Registration.DoctorId = dbo.tbl_UserMaster.UserId "
+               //////          + " left join tbl_AppointmentMaster ON tbl_Registration.AId = tbl_AppointmentMaster.AId "
+               //////          + " where cast(tbl_AppointmentMaster.ADtmFrom As Date) = '" + Convert.ToDateTime(param_dates).ToString("yyyy-MM-dd") + "' and "
+               //////          + " tbl_LedgerMaster.ledgerId = " + Convert.ToInt32(ledgerId) + " "
+               //////          + " and tbl_AppointmentMaster.remark = 'DR. DEVANGI JOGAL' order by QueueNo ";
+
+
+               //////////sql_query = " SELECT   dbo.tbl_AppointmentMaster .anumber as QueueNo, tbl_LedgerMaster.LedgerName, "
+               //////////          + " ISNULL(dbo.tbl_Registration.DoctorId, 0) AS DoctorId, ISNULL(dbo.tbl_UserMaster.UserName, '') AS UserName, '' as AproxTime, tbl_AppointmentMaster.ADtmFrom, tbl_AppointmentMaster.Remark, tbl_Registration.DDExitTime, tbl_Registration.DDInTime, tbl_LedgerMaster.LedgerId "
+               //////////          + " FROM dbo.tbl_AppointmentMaster INNER JOIN "
+               //////////          + " dbo.tbl_LedgerMaster ON dbo.tbl_AppointmentMaster.LedgerId = dbo.tbl_LedgerMaster.LedgerId  "
+               //////////          + " left join tbl_Registration ON tbl_AppointmentMaster.AId = tbl_Registration.AId "
+               //////////          + " LEFT OUTER JOIN dbo.tbl_UserMaster ON dbo.tbl_Registration.DoctorId = dbo.tbl_UserMaster.UserId "
+               //////////          + " where cast(tbl_AppointmentMaster.ADtmFrom As Date) = '" + Convert.ToDateTime(param_dates).ToString("yyyy-MM-dd") + "' "
+               //////////          ////+ " tbl_LedgerMaster.ledgerId = " + Convert.ToInt32(ledgerId) + " "
+               //////////          + " and tbl_AppointmentMaster.remark = 'DR. DEVANGI JOGAL' order by cast(tbl_AppointmentMaster.AdtmFrom as time) asc";
+               ///////
+
+
+               sql_query = " SELECT COUNT(*) "
+                          + " FROM dbo.tbl_AppointmentMaster "
+                          + " INNER JOIN  dbo.tbl_LedgerMaster ON dbo.tbl_AppointmentMaster.LedgerId = dbo.tbl_LedgerMaster.LedgerId "
                           + " left join tbl_Registration ON tbl_AppointmentMaster.AId = tbl_Registration.AId "
                           + " LEFT OUTER JOIN dbo.tbl_UserMaster ON dbo.tbl_Registration.DoctorId = dbo.tbl_UserMaster.UserId "
-                          + " where cast(tbl_AppointmentMaster.ADtmFrom As Date) = '" + Convert.ToDateTime(param_dates).ToString("yyyy-MM-dd") + "' "
-                          ////+ " tbl_LedgerMaster.ledgerId = " + Convert.ToInt32(ledgerId) + " "
-                          + " and tbl_AppointmentMaster.remark = 'DR. DEVANGI JOGAL' order by cast(tbl_AppointmentMaster.AdtmFrom as time) asc";
+                          + " where cast(tbl_AppointmentMaster.ADtmFrom As Date) = '" + Convert.ToDateTime(param_dates).ToString("yyyy-MM-dd") + "'  and tbl_AppointmentMaster.remark = 'DR. DEVANGI JOGAL' "
+                          + " and DDInTime  is null and DDExitTime is null and tbl_AppointmentMaster.ANumber < ( "
+                          + " select ANumber from View_Appointment where LedgerId = " + Convert.ToInt32(ledgerId) + " "
+                          + " and CAST(ADtmFrom as date) = '" + Convert.ToDateTime(param_dates).ToString("yyyy-MM-dd") + "' and Remark = 'DR. DEVANGI JOGAL' )";
+
 
                 SqlConnection con = new SqlConnection(conStr);
                 SqlCommand cmd = new SqlCommand(sql_query, con);
@@ -92,17 +98,27 @@ namespace JogiQueueTrack
 
                 con.Close();
 
-
+                //02072024
                 //Current Queue
-                sql_query = " select top (3) tbl_AppointmentMaster.Anumber as QueueNo, tbl_Registration.DDinTime "
-                          + " FROM dbo.tbl_AppointmentMaster "
-                          + " INNER JOIN  dbo.tbl_LedgerMaster ON dbo.tbl_AppointmentMaster.LedgerId = dbo.tbl_LedgerMaster.LedgerId  "
-                          + " left join tbl_Registration ON tbl_AppointmentMaster.AId = tbl_Registration.AId  "
-                          + " LEFT OUTER JOIN dbo.tbl_UserMaster ON dbo.tbl_Registration.DoctorId = dbo.tbl_UserMaster.UserId "
-                          + " where cast(tbl_AppointmentMaster.ADtmFrom As Date) = '" + Convert.ToDateTime(param_dates).ToString("yyyy-MM-dd") + "'  and tbl_AppointmentMaster.remark = 'DR. DEVANGI JOGAL' "
-                          + " order by row_number() over(order by tbl_Registration.DdinTime desc)";
+                //////sql_query = " select top (3) tbl_AppointmentMaster.Anumber as QueueNo, tbl_Registration.DDinTime "
+                //////          + " FROM dbo.tbl_AppointmentMaster "
+                //////          + " INNER JOIN  dbo.tbl_LedgerMaster ON dbo.tbl_AppointmentMaster.LedgerId = dbo.tbl_LedgerMaster.LedgerId  "
+                //////          + " left join tbl_Registration ON tbl_AppointmentMaster.AId = tbl_Registration.AId  "
+                //////          + " LEFT OUTER JOIN dbo.tbl_UserMaster ON dbo.tbl_Registration.DoctorId = dbo.tbl_UserMaster.UserId "
+                //////          + " where cast(tbl_AppointmentMaster.ADtmFrom As Date) = '" + Convert.ToDateTime(param_dates).ToString("yyyy-MM-dd") + "'  and tbl_AppointmentMaster.remark = 'DR. DEVANGI JOGAL' "
+                //////          + " order by row_number() over(order by tbl_Registration.DdinTime desc)";
                 //+ " tbl_LedgerMaster.ledgerId = " + Convert.ToInt32(ledgerId) + " "
                 //+ " and tbl_AppointmentMaster.remark = 'DR. DEVANGI JOGAL' order by cast(tbl_AppointmentMaster.AdtmFrom as time) asc";
+
+
+                //Token No.
+                sql_query = " SELECT ANumber "
+                          + " FROM dbo.tbl_AppointmentMaster "
+                          + " INNER JOIN  dbo.tbl_LedgerMaster ON dbo.tbl_AppointmentMaster.LedgerId = dbo.tbl_LedgerMaster.LedgerId  "
+                          + " left join tbl_Registration ON tbl_AppointmentMaster.AId = tbl_Registration.AId "
+                          + " LEFT OUTER JOIN dbo.tbl_UserMaster ON dbo.tbl_Registration.DoctorId = dbo.tbl_UserMaster.UserId "
+                          + " where cast(tbl_AppointmentMaster.ADtmFrom As Date) = '" + Convert.ToDateTime(param_dates).ToString("yyyy-MM-dd") + "'  and tbl_AppointmentMaster.remark = 'DR. DEVANGI JOGAL' "
+                          + " and tbl_LedgerMaster.LedgerId = " + Convert.ToInt32(ledgerId) + " ";
 
                 con = new SqlConnection(conStr);
                 cmd = new SqlCommand(sql_query, con);
@@ -114,8 +130,8 @@ namespace JogiQueueTrack
                     cmd.ExecuteNonQuery();
                 }
                 da = new SqlDataAdapter(cmd);
-                DataTable dtCurrentQueue = new DataTable();
-                da.Fill(dtCurrentQueue);
+                DataTable dtTokenNo = new DataTable();
+                da.Fill(dtTokenNo);
 
                 con.Close();
 
@@ -124,28 +140,29 @@ namespace JogiQueueTrack
                 DateTime startDtm;
                 if (dt.Rows.Count > 0)
                 {
-                    drPetient = dt.Select("LedgerId = " + Convert.ToInt64(ledgerId.ToString())).FirstOrDefault();
-                    int queueNo = Convert.ToInt32(drPetient["QueueNo"]);
-                    int cntPatient = 0;
+                //////    drPetient = dt.Select("LedgerId = " + Convert.ToInt64(ledgerId.ToString())).FirstOrDefault();
+                //////    int queueNo = Convert.ToInt32(drPetient["QueueNo"]);
+                //////    int cntPatient = 0;
 
-                Label:
-                    foreach (DataRow dr in  dt.Rows)
-                    {
+                //////Label:
+                //////    foreach (DataRow dr in  dt.Rows)
+                //////    {
 
-                        if (dr["DDInTime"] != null && queueNo > Convert.ToInt32(dr["QueueNo"]))
-                        {
-                            dr.Delete();
-                            dt.AcceptChanges();
-                            goto Label;
-                        }
-                        else
-                        {
-                            cntPatient += 1;
-                        }
+                //////        if (dr["DDInTime"] != null && queueNo > Convert.ToInt32(dr["QueueNo"]))
+                //////        {
+                //////            dr.Delete();
+                //////            dt.AcceptChanges();
+                //////            goto Label;
+                //////        }
+                //////        else
+                //////        {
+                //////            cntPatient += 1;
+                //////        }
 
-                    }
+                //////    }
 
-                    lblRemainToken.Text += Convert.ToString(cntPatient);
+                    lblQueueNo.Text += " " + Convert.ToString(dtTokenNo.Rows[0][0]);
+                    lblRemainToken.Text += " " + Convert.ToString(dt.Rows[0][0]);
                     /*
                     if (dt.Rows[0]["ADtmFrom"] != DBNull.Value)
                     {
@@ -370,8 +387,6 @@ namespace JogiQueueTrack
                     // Add Approx 8 minutes of Avarage Cons. time for Doctor
                     cntAddMin += 8;
                 }
-                gvQueue.DataSource = dt;
-                gvQueue.DataBind();
 
                 con.Close();
 

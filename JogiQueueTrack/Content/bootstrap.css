@@ -6173,8 +6173,8 @@ a.badge:focus {
 
     .jumbotron p {
         margin-bottom: 15px;
-        font-size: 21px;
-        font-weight: 200;
+        font-size: 30px;
+        font-weight: 300;
     }
 
     .jumbotron > hr {
@@ -6206,7 +6206,7 @@ a.badge:focus {
 
     .jumbotron h1,
     .jumbotron .h1 {
-        font-size: 63px;
+        font-size: 60px;
     }
 }
 
