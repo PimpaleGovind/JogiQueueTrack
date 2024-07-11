@@ -31,10 +31,25 @@
         <div class="container col-md-12">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="jumbotron bg-primary" style="background-color: #3a6f78" aria-orientation="vertical">
-                        <asp:Image ID="Image1" runat="server" ImageUrl="~/Round.jpg" width="05%" />
+                    <div class="jumbotron bg-primary" style="background-color: #3a6f78; font-family:Montserrat;" aria-orientation="vertical">
+                        <%--<asp:Image ID="Image1" runat="server" ImageUrl="~/Round.jpg" width="05%" />--%>
+                        <asp:Image ID="Image1" runat="server" ImageUrl="~/JOGINewRound.png" width="04%" />
                         <h1 id="mainHeading" style="color: #FFFFFF; font-size:4rem;">JOGI Ayurved Multispeciality Hospital</h1>
                         <p class="lead" style="color: #FFFFFF; font-size:4rem;">Track Your Queue</p>
+
+
+
+<%--                        <div class="form-row" style="font-family:Montserrat; ">
+                                <div class="form-group col-md-12">
+                                        <strong><b><asp:Label ID="lblQueueNo" runat="server" Font-Bold="True" style=" font-size: 5rem;">Your Token No :-  </asp:Label><br></b></strong>
+                                    <strong><b><asp:Label ID="lblName" runat="server" Font-Bold="True" style=" font-size: 5rem;">Name :-  </asp:Label><br></b></strong>
+
+                                    <strong>
+                                            <asp:Label ID="lblRemainToken" runat="server" CssClass="auto-style1" style="font-size: 5rem;">Waiting :-</asp:Label></strong><br>
+
+                                </div>
+                            </div>--%>
+
                     </div>
 
                     <%--Link Expiry Msg--%>
@@ -55,15 +70,20 @@
                                 <img src="calendar.png" alt="Alternate Text" id="imgSchedule"   />
                             </div>--%>
 
-                            <div class="form-row" style="font-family:cambria: #ffffff; ">
+                            <div class="form-row" style="font-family:Montserrat; ">
                                 <div class="form-group col-md-12">
                                         <strong><b><asp:Label ID="lblQueueNo" runat="server" Font-Bold="True" style=" font-size: 5rem;">Your Token No :-  </asp:Label><br></b></strong>
+                                    <strong><b><asp:Label ID="lblName" runat="server" Font-Bold="True" style=" font-size: 5rem;">Name :-  </asp:Label><br></b></strong>
+
+                                    <strong>
+                                            <asp:Label ID="lblRemainToken" runat="server" CssClass="auto-style1" style="font-size: 5rem;">Waiting :-</asp:Label></strong><br>
+
                                 </div>
                             </div>
 
                                 <div class="form-group col-md-12" style="font-family:cambria: #fff; ">
-                                    <strong>
-                                            <asp:Label ID="lblRemainToken" runat="server" CssClass="auto-style1" style="font-size: 5rem;">Remain Token No. :-</asp:Label></strong><br>
+                                    <%--<strong>
+                                            <asp:Label ID="lblRemainToken" runat="server" CssClass="auto-style1" style="font-size: 5rem;">Waiting :-</asp:Label></strong><br>--%>
                                 </div>
                         </form>
 

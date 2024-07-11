@@ -135,6 +135,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Home.aspx" />
     <Content Include="Jogi.ico" />
+    <Content Include="JOGINewRound.png" />
     <Content Include="libman.json" />
     <Content Include="lib\twitter-bootstrap\css\bootstrap-grid.css.map" />
     <Content Include="lib\twitter-bootstrap\css\bootstrap-grid.min.css.map" />
