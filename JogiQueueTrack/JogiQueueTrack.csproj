@@ -114,6 +114,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="circle.png" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -278,6 +279,7 @@
     <Content Include="lib\twitter-bootstrap\js\bootstrap.js" />
     <Content Include="lib\twitter-bootstrap\js\bootstrap.min.js" />
     <None Include="Resources\calendar.png" />
+    <Content Include="personwaiting.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />

@@ -19,8 +19,8 @@
 
     <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/Jogi.ico" rel="shortcut icon" type="image/x-icon" />
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet">
-    <link href="~/Content/bootstrap.css" rel="stylesheet">
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">

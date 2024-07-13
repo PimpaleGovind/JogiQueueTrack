@@ -22,8 +22,8 @@ namespace JogiQueueTrack
                 //string conStr = @"Data Source=192.168.29.254,56121; Integrated Security=false;Initial Catalog=dbSHM_JAH;uid=sa; Password=Ss.d@2017;";
                 //string conStr = @"Data Source=192.168.29.254,1433; Integrated Security=false;Initial Catalog=dbSHM_JAH;uid=sa; Password=Ss.d@2017;";
                 //string conStr = @"Data Source=115.246.21.234,1433; Integrated Security=false;Initial Catalog=dbSHM_JAH;uid=sa; Password=Ss.d@2017;";
-                //string conStr = @"Data Source=192.168.29.254,1433; Integrated Security=false;Initial Catalog=dbSHM_JAH;uid=sa; Password=Ss.d@2017;";
-                string conStr = @"Data Source=192.168.29.235,1433; Integrated Security=false;Initial Catalog=dbSHM_JAH;uid=sa; Password=jah@2024;";
+                string conStr = @"Data Source=192.168.29.254,1433; Integrated Security=false;Initial Catalog=dbSHM_JAH;uid=sa; Password=Ss.d@2017;";
+                //string conStr = @"Data Source=192.168.29.235,1433; Integrated Security=false;Initial Catalog=dbSHM_JAH;uid=sa; Password=jah@2024;";
                 string sql_query = "";
 
 
@@ -39,11 +39,11 @@ namespace JogiQueueTrack
 
                 //01072024
                 
-               if (DateTime.Now.ToString("yyyy-MM-dd") == Convert.ToDateTime(param_dates).ToString("yyyy-MM-dd"))
+               if (DateTime.Now.ToString("yyyy-MM-dd") != Convert.ToDateTime(param_dates).ToString("yyyy-MM-dd"))
                 {
                     Expired.Visible = true;
                     lblQueueNo.Visible = false;
-                    lblName.Visible = false;
+                    lblName_.Visible = false;
                     lblRemainToken.Visible = false;
                     return;
                 }
@@ -142,29 +142,30 @@ namespace JogiQueueTrack
                 DateTime startDtm;
                 if (dt.Rows.Count > 0)
                 {
-                //////    drPetient = dt.Select("LedgerId = " + Convert.ToInt64(ledgerId.ToString())).FirstOrDefault();
-                //////    int queueNo = Convert.ToInt32(drPetient["QueueNo"]);
-                //////    int cntPatient = 0;
+                    //////    drPetient = dt.Select("LedgerId = " + Convert.ToInt64(ledgerId.ToString())).FirstOrDefault();
+                    //////    int queueNo = Convert.ToInt32(drPetient["QueueNo"]);
+                    //////    int cntPatient = 0;
 
-                //////Label:
-                //////    foreach (DataRow dr in  dt.Rows)
-                //////    {
+                    //////Label:
+                    //////    foreach (DataRow dr in  dt.Rows)
+                    //////    {
 
-                //////        if (dr["DDInTime"] != null && queueNo > Convert.ToInt32(dr["QueueNo"]))
-                //////        {
-                //////            dr.Delete();
-                //////            dt.AcceptChanges();
-                //////            goto Label;
-                //////        }
-                //////        else
-                //////        {
-                //////            cntPatient += 1;
-                //////        }
+                    //////        if (dr["DDInTime"] != null && queueNo > Convert.ToInt32(dr["QueueNo"]))
+                    //////        {
+                    //////            dr.Delete();
+                    //////            dt.AcceptChanges();
+                    //////            goto Label;
+                    //////        }
+                    //////        else
+                    //////        {
+                    //////            cntPatient += 1;
+                    //////        }
 
-                //////    }
+                    //////    }
 
+                    string strName = "";
                     lblQueueNo.Text += " " + Convert.ToString(dtTokenNo.Rows[0][0]);
-                    lblName.Text += " " + Convert.ToString(dtTokenNo.Rows[0][1]);
+                    lblName_.Text += " " + Convert.ToString(dtTokenNo.Rows[0][1]);
                     lblRemainToken.Text += " " + Convert.ToString(dt.Rows[0][0]);
                     /*
                     if (dt.Rows[0]["ADtmFrom"] != DBNull.Value)
