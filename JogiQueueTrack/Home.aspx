@@ -4,6 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <meta http-equiv="refresh" content="30"  />
     <title>JOGI Ayurved Multispeciality Hospital</title>
 
     <asp:PlaceHolder runat="server">
@@ -14,7 +15,7 @@
     <link href="~/Jogi.ico" rel="shortcut icon" type="image/x-icon" />
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
-    <meta http-equiv="refresh" content="30">
+    <meta http-equiv="refresh" content="30" />
     <style>
         /*.jumbotron {
             background-color: #cfe2f3;
@@ -131,14 +132,14 @@
                     <div class="form-row" style="font-family: Montserrat;">
                         <div class="form-group col-md-12">
                             <strong><b>
-                                <asp:Label ID="lblName_" runat="server" Font-Bold="True" Style="font-size: 5rem;">Name :-  </asp:Label><br>
+                                <asp:Label ID="lblName_" runat="server" Font-Bold="True" Style="font-size: 5rem;">Name :-  </asp:Label><br />
                             </b></strong>
                             <strong><b>
-                                <asp:Label ID="lblQueueNo" runat="server" Font-Bold="True" Style="font-size: 5rem;">Your Token No :-  </asp:Label><br>
+                                <asp:Label ID="lblQueueNo" runat="server" Font-Bold="True" Style="font-size: 5rem;">Your Token No :-  </asp:Label><br />
                             </b></strong>
 
                             <strong>
-                                <asp:Label ID="lblRemainToken" runat="server" CssClass="auto-style1" Style="font-size: 5rem;">Waiting :-</asp:Label></strong><br>
+                                <asp:Label ID="lblRemainToken" runat="server" CssClass="auto-style1" Style="font-size: 5rem;">Waiting :-</asp:Label></strong><br />
                         </div>
                     </div>
                 </form>

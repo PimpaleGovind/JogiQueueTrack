@@ -21,8 +21,8 @@ namespace JogiQueueTrack
                 //string conStr = "Data Source= 192.168.29.254, 56121;Integrated Security = false; Initial Catalo=dbSHM_JAH; uid=sa; pwd=Ss.d@2017;";
                 //string conStr = @"Data Source=192.168.29.254,56121; Integrated Security=false;Initial Catalog=dbSHM_JAH;uid=sa; Password=Ss.d@2017;";
                 //string conStr = @"Data Source=192.168.29.254,1433; Integrated Security=false;Initial Catalog=dbSHM_JAH;uid=sa; Password=Ss.d@2017;";
-                //string conStr = @"Data Source=115.246.21.234,1433; Integrated Security=false;Initial Catalog=dbSHM_JAH;uid=sa; Password=Ss.d@2017;";
-                string conStr = @"Data Source=192.168.29.254,1433; Integrated Security=false;Initial Catalog=dbSHM_JAH;uid=sa; Password=Ss.d@2017;";
+                string conStr = @"Data Source=115.246.21.234,1433; Integrated Security=false;Initial Catalog=dbSHM_JAH;uid=sa; Password=Ss.d@2017;";
+                //string conStr = @"Data Source=192.168.29.254,1433; Integrated Security=false;Initial Catalog=dbSHM_JAH;uid=sa; Password=Ss.d@2017;";
                 //string conStr = @"Data Source=192.168.29.235,1433; Integrated Security=false;Initial Catalog=dbSHM_JAH;uid=sa; Password=jah@2024;";
                 string sql_query = "";
 
@@ -45,6 +45,7 @@ namespace JogiQueueTrack
                     lblQueueNo.Visible = false;
                     lblName_.Visible = false;
                     lblRemainToken.Visible = false;
+                    Image2.Visible = false;
                     return;
                 }
 
