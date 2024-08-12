@@ -34,6 +34,7 @@ namespace JogiQueueTrack
             //string conStr = @"Data Source=192.168.29.254,56121; Integrated Security=false;Initial Catalog=dbSHM_JAH;uid=sa; Password=Ss.d@2017;";
             //string conStr = @"Data Source=192.168.29.254,1433; Integrated Security=false;Initial Catalog=dbSHM_JAH;uid=sa; Password=Ss.d@2017;";
             //string conStr = @"Data Source=192.168.29.254,1433; Integrated Security=false;Initial Catalog=dbSHM_JAH;uid=sa; Password=Ss.d@2017;";
+            //string conStr = @"Data Source=115.246.21.234,1433; Integrated Security=false;Initial Catalog=dbSHM_JAH;uid=sa; Password=Ss.d@2017;";
             string conStr = @"Data Source=115.246.21.234,1433; Integrated Security=false;Initial Catalog=dbSHM_JAH;uid=sa; Password=Ss.d@2017;";
             string sql_query = "";
 
