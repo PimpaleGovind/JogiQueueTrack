@@ -255,6 +255,7 @@
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\IISProfile.pubxml" />
     <None Include="Properties\PublishProfiles\IISProfile1.pubxml" />
+    <None Include="Properties\PublishProfiles\registry.hub.docker.com_JogiQueueTrack.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="lib\twitter-bootstrap\css\bootstrap-grid.css" />
     <Content Include="lib\twitter-bootstrap\css\bootstrap-grid.min.css" />
